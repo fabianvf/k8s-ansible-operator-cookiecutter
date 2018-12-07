@@ -1,0 +1,7 @@
+apiVersion: {{ cookiecutter.group }}/{{ cookiecutter.version }}
+kind: {{ cookiecutter.kind }}
+metadata:
+  name: example-{{ cookiecutter.kind | lower }}
+spec:
+  # Add fields here
+  size: 3

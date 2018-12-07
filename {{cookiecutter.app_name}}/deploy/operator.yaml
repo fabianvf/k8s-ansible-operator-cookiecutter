@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ cookiecutter.app_name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: {{ cookiecutter.app_name }}
+  template:
+    metadata:
+      labels:
+        name: {{ cookiecutter.app_name }}
+    spec:
+      serviceAccountName: {{ cookiecutter.app_name }}
+      containers:
+        - name: {{ cookiecutter.app_name }}
+          # Replace this with the built image name
+          image: {{ "{{ REPLACE_IMAGE }}" }}
+          ports:
+          - containerPort: 60000
+            name: metrics
+          imagePullPolicy: Always
+          env:
+            - name: WATCH_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: OPERATOR_NAME
+              value: "{{ cookiecutter.app_name }}"

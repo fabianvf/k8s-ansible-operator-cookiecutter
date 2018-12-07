@@ -1,0 +1,14 @@
+---
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: {{ cookiecutter.kind | lower }}s.sample.com
+spec:
+  group: {{ cookiecutter.group }}
+  names:
+    kind: {{ cookiecutter.kind }}
+    listKind: {{ cookiecutter.kind }}List
+    plural: {{ cookiecutter.kind | lower }}s
+    singular: {{ cookiecutter.kind | lower }}
+  scope: Namespaced
+  version: {{ cookiecutter.version }}
