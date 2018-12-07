@@ -2,7 +2,7 @@
 apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
-  name: {{ cookiecutter.kind | lower }}s.sample.com
+  name: {{ cookiecutter.kind | lower }}s.{{ cookiecutter.group }}
 spec:
   group: {{ cookiecutter.group }}
   names:

@@ -1,5 +1,6 @@
 {
     "app_name": "changeme",
-    "api_version": "changeme",
+    "group": "changme",
+    "version": "v1alpha1",
     "kind": "Changeme"
 }
