@@ -1,0 +1,5 @@
+---
+- version: {{ cookiecutter.version }}
+  group: {{ cookiecutter.group }}
+  kind: {{ cookiecutter.kind }}
+  role: /opt/ansible/roles/{{ cookiecutter.kind | lower }}
