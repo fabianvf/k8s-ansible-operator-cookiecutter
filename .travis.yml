@@ -3,9 +3,10 @@ services: docker
 language: python
 install:
   - pip install docker molecule openshift
+  # Temporary, need to get this PR merged
+  - pip install -U https://github.com/fabianvf/molecule/archive/molecule-docker-cmd.tar.gz
 script:
-  - molecule init template --url . --config-file test/role.yaml
+  - cookiecutter . --config-file test/role.yaml
   - cd role && molecule test --all
-  - molecule init template --url . --config-file test/playbook.yaml
+  - cookiecutter . --config-file test/playbook.yaml
   - cd playbook && molecule test --all
-
