@@ -20,7 +20,7 @@ spec:
           ports:
           - containerPort: 60000
             name: metrics
-          imagePullPolicy: Always
+          imagePullPolicy: {{ "{{ pull_policy|default('Always') }}"}}
           env:
             - name: WATCH_NAMESPACE
               valueFrom:

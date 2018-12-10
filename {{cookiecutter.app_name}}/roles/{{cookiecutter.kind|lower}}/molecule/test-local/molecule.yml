@@ -1,0 +1,34 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint:
+  name: yamllint
+  enabled: False
+platforms:
+- name: kind
+  groups:
+  - k8s
+  image: bsycorp/kind:latest-1.12
+  privileged: True
+  exposed_ports:
+    - 8443/tcp
+    - 10080/tcp
+  published_ports:
+    - 0.0.0.0:8443:8443/tcp
+  pre_build_image: yes
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+    enabled: False
+  env:
+    K8S_AUTH_KUBECONFIG: /tmp/molecule/kind/root/.kube/config
+    KUBECONFIG: /tmp/molecule/kind/root/.kube/config
+scenario:
+  name: test-local
+verifier:
+  name: testinfra
+  lint:
+    name: flake8
