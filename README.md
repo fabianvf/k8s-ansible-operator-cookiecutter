@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/fabianvf/k8s-ansible-operator-cookiecutter.svg?branch=master)](https://travis-ci.com/fabianvf/k8s-ansible-operator-cookiecutter)
 ## Basic Usage
 ```
 molecule init template --url https://github.com/fabianvf/k8s-ansible-operator-cookiecutter
