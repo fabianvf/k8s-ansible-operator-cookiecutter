@@ -1,3 +1,13 @@
+## Basic Usage
+```
+molecule init template --url https://github.com/fabianvf/k8s-ansible-operator-cookiecutter
+```
+or 
+```
+cookiecutter https://github.com/fabianvf/k8s-ansible-operator-cookiecutter
+```
+and follow the prompts to set the required parameters.
+
 ## Requirements
 - Docker must be installed on your system
 - You will also need the following python packages:
@@ -33,7 +43,6 @@ that your operator is performing the actions you expect.
 The third scenario, `test-cluster` is intended to integrate into existing 
 end-to-end test suites. I'm not yet sure what it will do. WIP
 
-## How to use
 To use this cookiecutter template to initialize a new role, you can run
 `molecule init template --url https://github.com/fabianvf/k8s-ansible-operator-cookiecutter` and
 follow the prompts to select your `APP_NAME`, `GROUP`, `VERSION`, and `KIND`
@@ -81,7 +90,3 @@ $APP_NAME
 ```
 
 To run a molecule command, just `cd` to `$APP_NAME/roles/$KIND/`, then you can run any molecule command and it will be able to properly locate the scenarios.
-
-
-
-
