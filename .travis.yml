@@ -7,6 +7,6 @@ install:
   - pip install -U git+https://github.com/fabianvf/molecule.git@molecule-docker-cmd
 script:
   - cookiecutter . --config-file test/role.yaml --no-input
-  - cd role-test && molecule test --all
+  - (cd role-test && molecule --debug test --all)
   - cookiecutter . --config-file test/playbook.yaml --no-input
-  - cd playbook-test && molecule test --all
+  - (cd playbook-test && molecule --debug test --all)
