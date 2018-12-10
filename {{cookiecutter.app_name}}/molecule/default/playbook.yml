@@ -1,7 +1,8 @@
 ---
 {% if cookiecutter.generate_playbook == 'yes'  -%}
-- import_playbook: '{{ '{{ playbook_dir }}../../playbook.yml'}}'
+- import_playbook: '{{ '{{ playbook_dir }}/../../playbook.yml'}}'
 {% endif -%}
+
 - name: Converge
   hosts: localhost
   connection: local
