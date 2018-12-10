@@ -2,4 +2,8 @@
 - version: {{ cookiecutter.version }}
   group: {{ cookiecutter.group }}
   kind: {{ cookiecutter.kind }}
+  {% if cookiecutter.generate_playbook == 'yes' -%}
+  playbook: /opt/ansible/playbook.yml
+  {% else -%}
   role: /opt/ansible/roles/{{ cookiecutter.kind | lower }}
+  {% endif -%}

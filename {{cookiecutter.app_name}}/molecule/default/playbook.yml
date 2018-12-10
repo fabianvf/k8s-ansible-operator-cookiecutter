@@ -1,12 +1,17 @@
 ---
+{% if cookiecutter.generate_playbook == 'yes'  -%}
+- import_playbook: '{{ '{{ playbook_dir }}../../playbook.yml'}}'
+{% endif -%}
 - name: Converge
   hosts: localhost
   connection: local
   vars:
     ansible_python_interpreter: '{{ "{{ ansible_playbook_python }}" }}'
+{% if cookiecutter.generate_playbook == 'no'  -%}
   roles:
     - {{ cookiecutter.kind | lower }}
-  post_tasks:
+{% endif %}
+  tasks:
     - name: Verify that cluster state is as desired
       assert:
         that: yes

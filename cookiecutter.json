@@ -2,5 +2,6 @@
     "app_name": "changeme",
     "group": "changeme.example.com",
     "version": "v1alpha1",
-    "kind": "Changeme"
+    "kind": "Changeme",
+    "generate_playbook": ["no", "yes"]
 }
