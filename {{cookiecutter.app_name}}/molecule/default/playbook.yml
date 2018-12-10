@@ -7,10 +7,10 @@
   connection: local
   vars:
     ansible_python_interpreter: '{{ "{{ ansible_playbook_python }}" }}'
-{% if cookiecutter.generate_playbook == 'no'  -%}
+  {% if cookiecutter.generate_playbook == 'no'  -%}
   roles:
     - {{ cookiecutter.kind | lower }}
-{% endif %}
+  {% endif -%}
   tasks:
     - name: Verify that cluster state is as desired
       assert:
