@@ -17,7 +17,8 @@ and follow the prompts to set the required parameters.
 
 ## Description
 This repo is a cookiecutter template for generating an Ansible Operator scaffold.
-It will initialize a basic Ansible role, as well as three molecule scenarios.
+It will initialize a basic Ansible role, as well as three molecule scenarios and a
+basic .travis.yml for testing with travis-ci.
 
 To use this cookiecutter template to initialize a new role, you can run
 `molecule init template --url https://github.com/fabianvf/k8s-ansible-operator-cookiecutter` and
