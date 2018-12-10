@@ -7,7 +7,7 @@ lint:
   name: yamllint
   enabled: False
 platforms:
-- name: kind
+- name: kind-test-local
   groups:
   - k8s
   image: bsycorp/kind:latest-1.12
@@ -18,14 +18,16 @@ platforms:
   published_ports:
     - 0.0.0.0:8443:8443/tcp
   pre_build_image: yes
+  volumes:
+    - ${MOLECULE_PROJECT_DIRECTORY}/../../:/build:Z
 provisioner:
   name: ansible
   lint:
     name: ansible-lint
     enabled: False
   env:
-    K8S_AUTH_KUBECONFIG: /tmp/molecule/kind/root/.kube/config
-    KUBECONFIG: /tmp/molecule/kind/root/.kube/config
+    K8S_AUTH_KUBECONFIG: /tmp/molecule/kubeconfig
+    KUBECONFIG: /tmp/molecule/kubeconfig
 scenario:
   name: test-local
 verifier:

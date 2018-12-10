@@ -9,21 +9,21 @@
     namespace: osdk-test
     deploy_dir: '{{"{{ playbook_dir }}/../../../../deploy"}}'
   tasks:
-    - name: Create Custom Resource Definition
-      k8s:
-        definition: "{{'{{'}} lookup('file', '/'.join([deploy_dir, 'crds/{{cookiecutter.group.split('.')[0]}}_{{cookiecutter.version}}_{{cookiecutter.kind|lower}}_crd.yaml'])) {{'}}'}}"
+  - name: Create Custom Resource Definition
+    k8s:
+      definition: "{{'{{'}} lookup('file', '/'.join([deploy_dir, 'crds/{{cookiecutter.group.split('.')[0]}}_{{cookiecutter.version}}_{{cookiecutter.kind|lower}}_crd.yaml'])) {{'}}'}}"
 
-    - name: Ensure specified namespace is present
-      k8s:
-        api_version: v1
-        kind: Namespace
-        name: '{{ "{{ namespace }}" }}'
+  - name: Ensure specified namespace is present
+    k8s:
+      api_version: v1
+      kind: Namespace
+      name: '{{ "{{ namespace }}" }}'
 
-    - name: Create RBAC resources
-      k8s:
-        definition: "{{'{{'}} lookup('template', '/'.join([deploy_dir, item])) {{'}}'}}"
-        namespace: '{{ '{{ namespace }}' }}'
-      with_items:
-        - role.yaml
-        - role_binding.yaml
-        - service_account.yaml
+  - name: Create RBAC resources
+    k8s:
+      definition: "{{'{{'}} lookup('template', '/'.join([deploy_dir, item])) {{'}}'}}"
+      namespace: '{{ '{{ namespace }}' }}'
+    with_items:
+      - role.yaml
+      - role_binding.yaml
+      - service_account.yaml
