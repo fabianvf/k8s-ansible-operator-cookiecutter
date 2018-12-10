@@ -1,0 +1,11 @@
+sudo: required
+services: docker
+language: python
+install:
+  - pip install docker molecule openshift
+script:
+  - molecule init template --url . --config-file test/role.yaml
+  - cd role && molecule test --all
+  - molecule init template --url . --config-file test/playbook.yaml
+  - cd playbook && molecule test --all
+

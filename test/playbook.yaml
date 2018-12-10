@@ -1,0 +1,6 @@
+default_context:
+  app_name: playbook-test
+  group: playbook.example.com
+  version: v1
+  kind: PlaybookTest
+  generate_playbook: "yes"

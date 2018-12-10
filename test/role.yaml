@@ -1,0 +1,6 @@
+default_context:
+  app_name: role-test
+  group: role.example.com
+  version: v1
+  kind: RoleTest
+  generate_playbook: "no"
