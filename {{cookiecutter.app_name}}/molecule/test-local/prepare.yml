@@ -7,7 +7,7 @@
   vars:
     ansible_python_interpreter: '{{ "{{ ansible_playbook_python }}" }}'
     namespace: osdk-test
-    deploy_dir: '{{"{{ playbook_dir }}/../../../../deploy"}}'
+    deploy_dir: '{{'{{ lookup("env", "MOLECULE_PROJECT_DIRECTORY") }}/deploy'}}'
   tasks:
   - name: Create Custom Resource Definition
     k8s:

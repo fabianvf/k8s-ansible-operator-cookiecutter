@@ -7,6 +7,6 @@
   roles:
     - {{ cookiecutter.kind | lower }}
   post_tasks:
-    # Verify that cluster state is as desired
-    - assert:
+    - name: Verify that cluster state is as desired
+      assert:
         that: yes

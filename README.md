@@ -37,6 +37,17 @@ $APP_NAME
 │   ├── role_binding.yaml
 │   ├── role.yaml
 │   └── service_account.yaml
+├── molecule
+│   ├── default
+│   │   ├── INSTALL.rst
+│   │   ├── molecule.yml
+│   │   ├── playbook.yml
+│   │   └── prepare.yml
+│   └── test-local
+│       ├── INSTALL.rst
+│       ├── molecule.yml
+│       ├── playbook.yml
+│       └── prepare.yml
 ├── roles
 │   └── $KIND
 │       ├── defaults
@@ -46,17 +57,6 @@ $APP_NAME
 │       │   └── main.yml
 │       ├── meta
 │       │   └── main.yml
-│       ├── molecule
-│       │   ├── default
-│       │   │   ├── INSTALL.rst
-│       │   │   ├── molecule.yml
-│       │   │   ├── playbook.yml
-│       │   │   └── prepare.yml
-│       │   └── test-local
-│       │       ├── INSTALL.rst
-│       │       ├── molecule.yml
-│       │       ├── playbook.yml
-│       │       └── prepare.yml
 │       ├── README.md
 │       ├── tasks
 │       │   └── main.yml
@@ -66,7 +66,7 @@ $APP_NAME
 └── watches.yaml
 ```
 
-To run a molecule command, just `cd $APP_NAME/roles/$KIND/`, then you can run any molecule command and it will be able to properly locate the scenarios.
+To run a molecule command, just `cd $APP_NAME`, then you can run any molecule command and it will be able to properly locate the scenarios.
 
 ## Scenarios
 This cookiecutter sets up three molecule scenarios for testing your operator.

@@ -16,10 +16,10 @@ platforms:
     - 8443/tcp
     - 10080/tcp
   published_ports:
-    - 0.0.0.0:8443:8443/tcp
+    - 0.0.0.0:10443:8443/tcp
   pre_build_image: yes
   volumes:
-    - ${MOLECULE_PROJECT_DIRECTORY}/../../:/build:Z
+    - ${MOLECULE_PROJECT_DIRECTORY}:/build:Z
 provisioner:
   name: ansible
   lint:
@@ -28,6 +28,8 @@ provisioner:
   env:
     K8S_AUTH_KUBECONFIG: /tmp/molecule/kubeconfig
     KUBECONFIG: /tmp/molecule/kubeconfig
+    ANSIBLE_ROLES_PATH: ${MOLECULE_PROJECT_DIRECTORY}/roles
+    KIND_PORT: '10443'
 scenario:
   name: test-local
 verifier:
