@@ -9,6 +9,8 @@ cookiecutter https://github.com/fabianvf/k8s-ansible-operator-cookiecutter
 ```
 and follow the prompts to set the required parameters.
 
+![](https://thumbs.gfycat.com/FlickeringGargantuanKouprey-size_restricted.gif)
+
 ## Requirements
 - Docker must be installed on your system
 - You will also need the following python packages:
