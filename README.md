@@ -11,6 +11,17 @@ and follow the prompts to set the required parameters.
 
 ![](https://thumbs.gfycat.com/SplendidWetCottontail-size_restricted.gif)
 
+Commands run in above gif:
+```bash
+molecule init template --url https://github.com/fabianvf/k8s-ansible-operator-cookiecutter
+# Fill in the app-name, group, version, kind, and whether to use the playbook or role skeleton
+# I used example-operator, apps.fabianism.us, v1alpha1, ExampleApp, and 2 (for playbook)
+# Replace example-operator with your chosen app-name
+cd example-operator
+tree | less
+molecule test -s test-local
+```
+
 ## Requirements
 - Docker must be installed on your system
 - You will also need the following python packages:
