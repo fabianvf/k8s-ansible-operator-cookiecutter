@@ -18,6 +18,12 @@ and follow the prompts to set the required parameters.
   - `docker`
   - `openshift`
 
+*NOTE* Until [this PR](https://github.com/ansible/molecule/pull/1615) is merged you will need to install
+my branch of molecule that contains the fix. You can do so with the following command:
+```
+pip install git+https://github.com/fabianvf/molecule.git@molecule-docker-cmd
+```
+
 ## Description
 This repo is a cookiecutter template for generating an Ansible Operator scaffold.
 It will initialize a basic Ansible role, as well as three molecule scenarios and a
