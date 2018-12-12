@@ -29,10 +29,10 @@ molecule test -s test-local
   - `docker`
   - `openshift`
 
-*NOTE* Until [this PR](https://github.com/ansible/molecule/pull/1615) is merged you will need to install
-my branch of molecule that contains the fix. You can do so with the following command:
+*NOTE* This template requires a patch to `molecule` that has not yet made it into a release.
+In order to install `molecule` from the master branch on github, run:
 ```
-pip install git+https://github.com/fabianvf/molecule.git@molecule-docker-cmd
+pip install git+https://github.com/ansible/molecule.git
 ```
 
 ## Description
