@@ -5,7 +5,7 @@ driver:
   name: delegated
   options:
     managed: False
-    ansible_connetion_options: {}
+    ansible_connection_options: {}
 lint:
   name: yamllint
   enabled: False
