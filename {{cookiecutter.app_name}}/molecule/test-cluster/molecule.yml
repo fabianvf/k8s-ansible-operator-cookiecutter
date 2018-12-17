@@ -1,0 +1,31 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: delegated
+  options:
+    managed: False
+lint:
+  name: yamllint
+  enabled: False
+platforms:
+- name: test-cluster
+  groups:
+  - k8s
+provisioner:
+  name: ansible
+  inventory:
+    host_vars:
+      all:
+        namespace: ${TEST_NAMESPACE}
+  lint:
+    name: ansible-lint
+    enabled: False
+  env:
+    ANSIBLE_ROLES_PATH: ${MOLECULE_PROJECT_DIRECTORY}/roles
+scenario:
+  name: test-cluster
+verifier:
+  name: testinfra
+  lint:
+    name: flake8
