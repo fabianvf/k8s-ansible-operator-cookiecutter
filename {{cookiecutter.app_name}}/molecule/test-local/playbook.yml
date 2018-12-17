@@ -44,3 +44,5 @@
       msg: "{{'{{'}} lookup('k8s', group='{{cookiecutter.group}}', api_version='{{cookiecutter.version}}', kind='{{cookiecutter.kind}}', namespace=namespace, resource_name=cr.metadata.name) {{'}}'}}"
     vars:
       cr: "{{'{{'}} lookup('file', '/'.join([deploy_dir, 'crds/{{cookiecutter.group.split('.')[0]}}_{{cookiecutter.version}}_{{cookiecutter.kind|lower}}_cr.yaml'])) | from_yaml {{'}}'}}"
+
+- import_playbook: '{{'{{ playbook_dir }}/../default/asserts.yml'}}'
