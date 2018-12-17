@@ -5,6 +5,7 @@ driver:
   name: delegated
   options:
     managed: False
+    ansible_connetion_options: {}
 lint:
   name: yamllint
   enabled: False
@@ -15,9 +16,9 @@ platforms:
 provisioner:
   name: ansible
   inventory:
-    host_vars:
+    group_vars:
       all:
-        namespace: ${TEST_NAMESPACE}
+        namespace: ${TEST_NAMESPACE:-osdk-test}
   lint:
     name: ansible-lint
     enabled: False

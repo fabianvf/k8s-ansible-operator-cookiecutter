@@ -1,6 +1,6 @@
 #!/bin/sh
 
-(${OPERATOR:-/usr/local/bin/ansible-operator})&
+(/usr/local/bin/entrypoint)&
 trap "kill $!" SIGINT SIGTERM EXIT
 
 cd ${HOME}/project

@@ -5,9 +5,8 @@
   connection: local
   vars:
     ansible_python_interpreter: '{{"{{ ansible_playbook_python }}"}}'
-    namespace: osdk-test
   tasks:
-    - name: Get all pods in {{ namespace }}
+    - name: Get all pods in {{'{{ namespace }}'}}
       k8s_facts:
         api_version: v1
         kind: Pod
