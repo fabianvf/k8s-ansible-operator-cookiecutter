@@ -16,11 +16,11 @@ spec:
       containers:
         - name: {{ cookiecutter.app_name }}
           # Replace this with the built image name
-          image: {{ "{{ REPLACE_IMAGE }}" }}
+          image: "{{ "{{ REPLACE_IMAGE }}" }}"
           ports:
           - containerPort: 60000
             name: metrics
-          imagePullPolicy: {{ "{{ pull_policy|default('Always') }}"}}
+          imagePullPolicy: "{{ "{{ pull_policy|default('Always') }}"}}"
           env:
             - name: WATCH_NAMESPACE
               valueFrom:
